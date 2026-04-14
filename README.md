@@ -3,17 +3,18 @@
 
 Trabalho Interdisciplinar - Aplicacões Web
 
-`CURSO`
+`Sistemas de Informação`
 
-`SEMESTRE`
+`01/2026`
 
 ## Participantes
 
 Os membros do grupo são: 
-- Fulano da Silva
-- Ciclano Albuquerque
-
-> Inclua a lista dos membros da equipe com seus nomes completos.
+- Kaio Fabio Nogueira Perpetuo
+- Nicolly Gomes Dalamora
+- Paulo Júlio Gonçalves Santos
+- Rafael Arcangelo Bosco Castro Chagas
+- Rafael Eustáquio Maia Reis
 
 # Estrutura do Projeto
 
