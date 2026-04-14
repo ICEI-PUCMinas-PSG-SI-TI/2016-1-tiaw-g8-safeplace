@@ -3,18 +3,15 @@
 
 Trabalho Interdisciplinar - Aplicacões Web
 
-`Sistemas de Informação`
+`CURSO`
 
-`01/2026`
+`SEMESTRE`
 
 ## Participantes
 
 Os membros do grupo são: 
-- Kaio Fabio Nogueira Perpetuo
-- Nicolly Gomes Dalamora
-- Paulo Júlio Gonçalves Santos
-- Rafael Arcangelo Bosco Castro Chagas
-- Rafael Eustáquio Maia Reis
+- Fulano da Silva
+- Ciclano Albuquerque
 
 > Inclua a lista dos membros da equipe com seus nomes completos.
 
