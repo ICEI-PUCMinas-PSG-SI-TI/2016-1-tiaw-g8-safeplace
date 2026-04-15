@@ -78,8 +78,8 @@ Wireframes
 5. Google Docs: Ferramenta prática para edição de arquivos de texto (utilizado em atividades) 
 
 # Divisão de tarefas
-Kaio - Ideação, apresentação
-Nicolly - Ideação, organização, envios
-Paulo - Apresentação, userflow e wireframe
-Rafael Arcangelo - Apresentação, ideação, organização
-Rafael Eustáquio - Github, README.md
+1. Kaio - Ideação, apresentação
+2. Nicolly - Ideação, organização, envios
+3. Paulo - Apresentação, userflow e wireframe
+4. Rafael Arcangelo - Apresentação, ideação, organização
+5. Rafael Eustáquio - Github, README.md 
