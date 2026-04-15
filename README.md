@@ -1,5 +1,5 @@
 # Informações do Projeto
-mySafeSpace
+mySafePlace
 
 Trabalho Interdisciplinar - Aplicacões Web
 
