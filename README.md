@@ -30,7 +30,7 @@ Os membros do grupo são:
 
 ## Product Discovery
 
-![Matriz CSD e mapa de stakeholders](docs/atividades/Matriz%20CSD%20e%20Mapa%20de%20Stakeholders%20-%20Grupo%208.pdf)
+![Matriz CSD e mapa de stakeholders](docs/images/img18.jpg)
 
 # Personas:
 
@@ -55,17 +55,17 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 # Proposta de valor
 
-![Proposta de valor](docs/atividades/Mapa%20de%20Valores.pdf)
+![Proposta de valor](docs/images/img17.jpg)
 
 # Projeto de interface
 
 User Flow
 
-![UserFlow](images/img11.jpg)
+![UserFlow](docs/images/img11.jpg)
 
 Wireframes
 
-![Wireframe](images/img10.jpg)
+![Wireframe](docs/images/img10.jpg)
 
 ## Metodologia
 
