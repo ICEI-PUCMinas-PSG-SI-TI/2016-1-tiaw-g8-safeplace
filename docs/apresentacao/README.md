@@ -17,7 +17,7 @@
 
 ## Slides
 
-Coloque aqui os slides da apresentação
+![Apresentação](Company%20Profile.pdf)
 
 ## Vídeo
 
