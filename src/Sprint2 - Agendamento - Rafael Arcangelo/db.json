@@ -1,0 +1,316 @@
+{
+  "profissionais": [
+    {
+      "id": "1",
+      "nome": "Ana Souza",
+      "crp": "04/12345",
+      "sexo": "F",
+      "latitude": -19.9167,
+      "longitude": -43.9345,
+      "atendimento": [
+        "presencial",
+        "online"
+      ],
+      "disponibilidade": [
+        "09:00",
+        "10:00",
+        "14:00",
+        "16:00"
+      ]
+    },
+    {
+      "id": "2",
+      "nome": "Carlos Lima",
+      "crp": "04/67890",
+      "sexo": "M",
+      "latitude": -19.93,
+      "longitude": -43.95,
+      "atendimento": [
+        "presencial",
+        "online"
+      ],
+      "disponibilidade": [
+        "08:00",
+        "11:00",
+        "15:00"
+      ]
+    },
+    {
+      "id": "3",
+      "nome": "Fernanda Reis",
+      "crp": "04/11223",
+      "sexo": "F",
+      "latitude": -19.89,
+      "longitude": -43.91,
+      "atendimento": [
+        "online"
+      ],
+      "disponibilidade": [
+        "09:00",
+        "13:00",
+        "17:00"
+      ]
+    },
+    {
+      "id": "4",
+      "nome": "Marcos Alves",
+      "crp": "04/33445",
+      "sexo": "M",
+      "latitude": -19.95,
+      "longitude": -44,
+      "atendimento": [
+        "presencial"
+      ],
+      "disponibilidade": [
+        "10:00",
+        "14:00",
+        "16:00"
+      ]
+    }
+  ],
+  "agendamentos": [
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "online",
+      "data": "2026-05-20",
+      "horario": "09:00",
+      "status": "confirmado",
+      "id": "QJHJ0nuYTtw"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "presencial",
+      "data": "2026-05-19",
+      "horario": "09:00",
+      "status": "confirmado",
+      "id": "KmaMoQOfk1I"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "presencial",
+      "data": "2026-05-21",
+      "horario": "14:00",
+      "status": "confirmado",
+      "id": "9TErEAIuGhk"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "presencial",
+      "data": "2026-05-19",
+      "horario": "09:00",
+      "status": "confirmado",
+      "id": "HDWWN4cr8gs"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "online",
+      "data": "2026-05-19",
+      "horario": "09:00",
+      "status": "confirmado",
+      "id": "ia9C0regrlQ"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "3",
+      "profissionalNome": "Fernanda Reis",
+      "modalidade": "online",
+      "data": "2026-05-19",
+      "horario": "09:00",
+      "status": "confirmado",
+      "id": "47i4U-rQQz8"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "presencial",
+      "data": "2026-05-19",
+      "horario": "09:00",
+      "status": "confirmado",
+      "id": "6wmo0rEFtWc"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "presencial",
+      "data": "2026-05-18",
+      "horario": "10:00",
+      "status": "confirmado",
+      "id": "65MvKjf6lKo"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "online",
+      "data": "2026-05-19",
+      "horario": "09:00",
+      "status": "confirmado",
+      "id": "cvum2hLih1g"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "presencial",
+      "data": "2026-05-19",
+      "horario": "09:00",
+      "status": "confirmado",
+      "id": "8m1yzuT9M1Q"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "presencial",
+      "data": "2026-05-19",
+      "horario": "09:00",
+      "status": "confirmado",
+      "id": "PVPtI-nnqWU"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "presencial",
+      "data": "2026-05-18",
+      "horario": "10:00",
+      "status": "confirmado",
+      "id": "b0OZOGnozm0"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "presencial",
+      "data": "2026-05-18",
+      "horario": "09:00",
+      "status": "confirmado",
+      "id": "tXoMKgiriy0"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "online",
+      "data": "2026-05-19",
+      "horario": "09:00",
+      "status": "confirmado",
+      "id": "_cYpjcMCl84"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "online",
+      "data": "2026-05-19",
+      "horario": "10:00",
+      "status": "confirmado",
+      "id": "oLTEurHR34Y"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "presencial",
+      "data": "2026-05-19",
+      "horario": "09:00",
+      "status": "confirmado",
+      "id": "vcEAa4UqMn0"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "presencial",
+      "data": "2026-05-19",
+      "horario": "09:00",
+      "status": "confirmado",
+      "id": "85OPynqLJRE"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "presencial",
+      "data": "2026-05-19",
+      "horario": "09:00",
+      "status": "confirmado",
+      "id": "Y7WYrWuQ9jw"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "presencial",
+      "data": "2026-05-19",
+      "horario": "10:00",
+      "status": "confirmado",
+      "id": "SD4M5nkr6Kg"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "presencial",
+      "data": "2026-05-21",
+      "horario": "14:00",
+      "status": "confirmado",
+      "id": "ekkcAtnXKh8"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "2",
+      "profissionalNome": "Carlos Lima",
+      "modalidade": "presencial",
+      "data": "2026-05-19",
+      "horario": "11:00",
+      "status": "confirmado",
+      "id": "G5cO_YLWt7o"
+    },
+    {
+      "nomePaciente": "Rafael Arcangelo Bosco Castro Chagas",
+      "email": "rafaelarcangelo13@gmail.com",
+      "profissionalId": "1",
+      "profissionalNome": "Ana Souza",
+      "modalidade": "online",
+      "data": "2026-05-19",
+      "horario": "10:00",
+      "status": "confirmado",
+      "id": "ofr0gT5fomE"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
