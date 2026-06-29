@@ -1,0 +1,26 @@
+{
+  "agendamentos": [
+    {
+      "id": "1",
+      "nomePaciente": "João Pereira",
+      "email": "joao@email.com",
+      "modalidade": "Online",
+      "profissional": "Ana Souza",
+      "data": "2026-06-10",
+      "horario": "10:00",
+      "motivo": "Preciso conversar sobre ansiedade.",
+      "status": "Solicitado"
+    },
+    {
+      "id": "2",
+      "nomePaciente": "Carla Mendes",
+      "email": "carla@email.com",
+      "modalidade": "Presencial",
+      "profissional": "Bruno Lima",
+      "data": "2026-06-11",
+      "horario": "14:00",
+      "motivo": "Busca por acolhimento emocional.",
+      "status": "Solicitado"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Safe Place</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f5f7f4; color: #1f2d25; }
+    header { background: #2d6a4f; color: white; padding: 22px; text-align: center; }
+    header h1 { margin: 0 0 6px; font-size: 28px; }
+    header p { margin: 0; font-size: 15px; }
+    main { max-width: 780px; margin: 24px auto; padding: 0 16px; }
+    .card { background: white; border: 1px solid #d5ddd5; border-radius: 10px; padding: 18px; margin-bottom: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    h2 { margin: 0 0 14px; color: #2d6a4f; font-size: 21px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 14px; color: #44534b; }
+    input, select, textarea { width: 100%; padding: 10px; border: 1px solid #bdc9be; border-radius: 6px; font-size: 14px; background: #fbfbfb; }
+    textarea { resize: vertical; min-height: 70px; }
+    .full { grid-column: 1 / -1; }
+    .botoes { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+    button { border: none; border-radius: 6px; padding: 10px 16px; cursor: pointer; font-weight: bold; }
+    .btn-principal { background: #2d6a4f; color: white; }
+    .btn-secundario { background: #e8ece8; color: #25332b; }
+    .mensagem { margin-top: 12px; padding: 10px; border-radius: 6px; display: none; }
+    .sucesso { background: #d8f3dc; color: #1b4332; display: block; }
+    .erro { background: #ffe2e2; color: #7a1d1d; display: block; }
+    .resumo { background: #f1f6f2; border-left: 4px solid #2d6a4f; padding: 12px; border-radius: 6px; margin-top: 14px; font-size: 14px; color: #44534b; }
+    footer { text-align: center; color: #6b7c74; font-size: 13px; margin: 30px 0; }
+    @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MySafePlace</h1>
+    <p>Agendamento para atendimento</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Solicitar agendamento</h2>
+      <form id="form-agendamento">
+        <div class="grid">
+          <div>
+            <label for="nomePaciente">Nome do paciente</label>
+            <input type="text" id="nomePaciente" placeholder="Digite seu nome" required>
+          </div>
+          <div>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="seu@email.com" required>
+          </div>
+          <div>
+            <label for="modalidade">Modalidade</label>
+            <select id="modalidade" required>
+              <option value="Online">Online</option>
+              <option value="Presencial">Presencial</option>
+            </select>
+          </div>
+          <div>
+            <label for="profissional">Profissional</label>
+            <select id="profissional" required>
+              <option value="Ana Souza">Dra. Ana Souza</option>
+              <option value="Bruno Lima">Dr. Bruno Lima</option>
+              <option value="Marina Costa">Dra. Marina Costa</option>
+            </select>
+          </div>
+          <div>
+            <label for="data">Data</label>
+            <input type="date" id="data" required>
+          </div>
+          <div>
+            <label for="horario">Horário</label>
+            <select id="horario" required>
+              <option value="08:00">08:00</option>
+              <option value="10:00">10:00</option>
+              <option value="14:00">14:00</option>
+              <option value="16:00">16:00</option>
+            </select>
+          </div>
+          <div class="full">
+            <label for="motivo">Motivo breve do atendimento</label>
+            <textarea id="motivo" placeholder="Descreva brevemente o motivo do contato" required></textarea>
+          </div>
+        </div>
+
+        <div class="resumo" id="resumo">
+          Preencha os dados para solicitar um atendimento pelo My Safe Place.
+        </div>
+
+        <div class="botoes">
+          <button class="btn-principal" type="submit">Cadastrar agendamento</button>
+          <button class="btn-secundario" type="button" id="btn-limpar">Limpar formulário</button>
+        </div>
+        <div id="mensagem" class="mensagem"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>MySafePlace</footer>
+
+  <script>
+    const API_URL = 'http://localhost:3000/agendamentos';
+
+    const form = document.getElementById('form-agendamento');
+    const mensagem = document.getElementById('mensagem');
+    const btnLimpar = document.getElementById('btn-limpar');
+    const resumo = document.getElementById('resumo');
+
+    document.getElementById('data').min = new Date().toISOString().split('T')[0];
+
+    function mostrarMensagem(texto, tipo) {
+      mensagem.textContent = texto;
+      mensagem.className = 'mensagem ' + tipo;
+      setTimeout(() => { mensagem.style.display = 'none'; }, 3500);
+    }
+
+    function coletarDadosFormulario() {
+      return {
+        nomePaciente: document.getElementById('nomePaciente').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        modalidade: document.getElementById('modalidade').value,
+        profissional: document.getElementById('profissional').value,
+        data: document.getElementById('data').value,
+        horario: document.getElementById('horario').value,
+        motivo: document.getElementById('motivo').value.trim(),
+        status: 'Solicitado'
+      };
+    }
+
+    function formatarData(data) {
+      if (!data) return '-';
+      const partes = data.split('-');
+      return partes[2] + '/' + partes[1] + '/' + partes[0];
+    }
+
+    function atualizarResumo() {
+      const dados = coletarDadosFormulario();
+      if (!dados.nomePaciente && !dados.email && !dados.data) {
+        resumo.textContent = 'Preencha os dados para solicitar um atendimento pelo My Safe Place.';
+        return;
+      }
+
+      resumo.innerHTML = `
+        <strong>Resumo da solicitação:</strong><br>
+        Paciente: ${dados.nomePaciente || '-'}<br>
+        Profissional: ${dados.profissional}<br>
+        Modalidade: ${dados.modalidade}<br>
+        Data e horário: ${formatarData(dados.data)} às ${dados.horario}
+      `;
+    }
+
+    function limparFormulario() {
+      form.reset();
+      document.getElementById('data').min = new Date().toISOString().split('T')[0];
+      resumo.textContent = 'Preencha os dados para solicitar um atendimento pelo My Safe Place.';
+    }
+
+    async function salvarAgendamento(evento) {
+      evento.preventDefault();
+      const dados = coletarDadosFormulario();
+
+      try {
+        await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(dados)
+        });
+
+        mostrarMensagem('Solicitação de agendamento cadastrada com sucesso!', 'sucesso');
+        limparFormulario();
+      } catch (erro) {
+        mostrarMensagem('Erro ao salvar. Confira se o JSONServer está ativo.', 'erro');
+      }
+    }
+
+    form.addEventListener('submit', salvarAgendamento);
+    btnLimpar.addEventListener('click', limparFormulario);
+
+    form.addEventListener('input', atualizarResumo);
+    form.addEventListener('change', atualizarResumo);
+  </script>
+</body>
+</html>
