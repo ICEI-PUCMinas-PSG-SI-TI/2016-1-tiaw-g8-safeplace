@@ -1,0 +1,26 @@
+/* 
+   MySafePlace — Integração da Agenda (Kaio)
+   Adicione este import no <head> do index.html da agenda,
+   ANTES do css/style.css:
+   <link rel="stylesheet" href="global.css">
+   <link rel="stylesheet" href="agenda_integracao.css">
+*/
+
+/* Sobrescreve as variáveis de cor da agenda com a paleta MySafePlace */
+:root {
+  --accent:            #1e5c38;
+  --accent-btn:        #1e5c38;
+  --nav-active-bg:     #eaf5ee;
+  --nav-active-text:   #1e5c38;
+  --nav-active-border: #1e5c38;
+  --cal-today-bg:      #1e5c38;
+  --cal-today-text:    #fff;
+  --cal-dot:           #1e5c38;
+  --cal-hover:         #eaf5ee;
+  --cal-selected-bg:   #eaf5ee;
+  --bg:                #f4f8f5;
+  --sidebar-bg:        #ffffff;
+  --sidebar-border:    #d0e4d8;
+  --card-bg:           #ffffff;
+  --card-border:       #d0e4d8;
+}
