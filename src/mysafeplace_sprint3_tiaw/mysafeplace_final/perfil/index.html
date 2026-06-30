@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MySafePlace – Perfil</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/global.css">
+  <style>
+    body { background:var(--msp-fundo); }
+    .msp-header { background:var(--msp-verde-escuro); padding:14px 20px; display:flex; align-items:center; justify-content:space-between; }
+    .msp-header .logo { font-family:'Nunito',sans-serif; font-size:1.2rem; font-weight:800; color:white; text-decoration:none; }
+    .msp-header nav a { color:rgba(255,255,255,0.8); text-decoration:none; font-size:0.88rem; font-weight:600; margin-left:4px; }
+    .msp-header nav a:hover, .msp-header nav a.active { color:white; font-weight:700; }
+    .msp-header nav { display:flex; gap:4px; align-items:center; }
+    .card { border:1px solid var(--msp-cinza-borda) !important; border-radius:var(--msp-radius) !important; }
+    .hidden { display:none; }
+    label { margin-bottom:4px; font-weight:600; font-size:0.85rem; color:var(--msp-cinza-texto); }
+    .form-control { border:1.5px solid var(--msp-cinza-borda) !important; font-family:var(--msp-fonte) !important; }
+    .form-control:focus { border-color:var(--msp-verde-claro) !important; box-shadow:0 0 0 3px rgba(30,92,56,0.12) !important; }
+    @media (max-width:480px) { .msp-header nav{display:none;} .d-flex.gap-2{flex-wrap:wrap;} .d-flex.gap-2 .btn{flex:1;min-width:80px;text-align:center;} }
+  </style>
+</head>
+<body>
+  <div class="msp-header">
+    <a href="../index.html" class="logo">my<span style="color:#a8e6c1;">SafePlace</span></a>
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="../agendamento/index.html">Consultas</a>
+      <a href="../chat/index.html">Chat</a>
+      <a href="../avaliacoes/index.html">Avaliações</a>
+      <a href="../perfil/index.html" class="active">Perfil</a>
+      <a href="../agenda/index.html">Agenda</a>
+      <a href="../artigos/index.html">Artigos</a>
+    </nav>
+  </div>
+  <div class="container mt-4">
+    <div class="card shadow-sm p-4 mx-auto" style="max-width:420px;">
+      <h5 class="text-center mb-3 fw-bold" style="color:var(--msp-verde-escuro);">Meu Perfil</h5>
+      <h4 id="nome" class="text-center fw-bold"></h4>
+      <hr style="border-color:var(--msp-cinza-borda);">
+      <p id="email" class="text-center text-muted mb-1"></p>
+      <p id="telefone" class="text-center mb-1"></p>
+      <p id="cidade" class="text-center mb-3"></p>
+      <div class="d-flex justify-content-center gap-2 mt-3">
+        <button class="btn btn-primary" onclick="editar()">Editar</button>
+        <a href="../index.html" class="btn btn-outline-secondary">Início</a>
+        <a href="favoritos.html" class="btn btn-success">Favoritos</a>
+      </div>
+    </div>
+    <div id="form-edicao" class="card shadow-sm p-4 mx-auto mt-4 hidden" style="max-width:420px;">
+      <h5 class="text-center mb-3 fw-bold" style="color:var(--msp-verde-escuro);">Editar Perfil</h5>
+      <label>Nome:</label>
+      <input type="text" id="editNome" class="form-control mb-2">
+      <label>E-mail:</label>
+      <input type="email" id="editEmail" class="form-control mb-2">
+      <label>Telefone:</label>
+      <input type="text" id="editTelefone" class="form-control mb-2">
+      <label>Cidade:</label>
+      <input type="text" id="editCidade" class="form-control mb-3">
+      <div class="d-flex justify-content-center gap-2">
+        <button class="btn btn-success" onclick="salvar()">Salvar</button>
+        <button class="btn btn-secondary" onclick="cancelar()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../shared/supabase.js"></script>
+  <script>
+    async function carregarPerfil() {
+      try {
+        const perfil = await db.getById('usuarios', 1);
+        document.getElementById('nome').textContent = perfil.nome;
+        document.getElementById('email').textContent = perfil.email;
+        document.getElementById('telefone').textContent = perfil.telefone;
+        document.getElementById('cidade').textContent = perfil.cidade;
+        document.getElementById('editNome').value = perfil.nome;
+        document.getElementById('editEmail').value = perfil.email;
+        document.getElementById('editTelefone').value = perfil.telefone;
+        document.getElementById('editCidade').value = perfil.cidade;
+      } catch(e) { console.error(e); }
+    }
+    function editar() { document.getElementById('form-edicao').classList.remove('hidden'); }
+    function cancelar() { document.getElementById('form-edicao').classList.add('hidden'); }
+    async function salvar() {
+      await db.put('usuarios', 1, {
+        nome: document.getElementById('editNome').value,
+        email: document.getElementById('editEmail').value,
+        telefone: document.getElementById('editTelefone').value,
+        cidade: document.getElementById('editCidade').value
+      });
+      cancelar();
+      carregarPerfil();
+    }
+    
+    carregarPerfil();
+  </script>
+</body>
+</html>
