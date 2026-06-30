@@ -1,0 +1,173 @@
+{
+  "artigos": [
+    {
+      "id": "1",
+      "titulo": "Ansiedade: como reconhecer os sinais e buscar ajuda",
+      "resumo": "A ansiedade é uma das condições de saúde mental mais comuns. Entenda os principais sintomas e saiba quando procurar um profissional.",
+      "data": "10/01/2026 - 09:00",
+      "autor": "Dra. Camila Fonseca, Psicóloga Clínica",
+      "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "likes": 144,
+      "visualizacoes": 1946,
+      "categoria": "Ansiedade",
+      "tags": [
+        "ansiedade",
+        "saúde mental",
+        "sintomas",
+        "pânico"
+      ],
+      "imagemCapa": "https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?w=600",
+      "imagemAlt": "Pessoa com expressão preocupada olhando pela janela",
+      "destaque": true,
+      "publicado": true
+    },
+    {
+      "id": "2",
+      "titulo": "Depressão: muito além da tristeza",
+      "resumo": "Depressão não é fraqueza. É uma doença séria que afeta milhões de pessoas e tem tratamento eficaz.",
+      "data": "15/01/2026 - 14:00",
+      "autor": "Dr. Marcos Vinicius Almeida, Psiquiatra",
+      "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "likes": 227,
+      "visualizacoes": 3120,
+      "categoria": "Depressão",
+      "tags": [
+        "depressão",
+        "transtorno do humor",
+        "tristeza",
+        "tratamento"
+      ],
+      "imagemCapa": "https://images.unsplash.com/photo-1541199249251-f713e6145474?w=600",
+      "imagemAlt": "Pessoa sentada sozinha em um quarto escuro",
+      "destaque": true,
+      "publicado": true
+    },
+    {
+      "id": "3",
+      "titulo": "Mindfulness: presença plena no dia a dia",
+      "resumo": "A prática de mindfulness tem se mostrado eficaz na redução do estresse e da ansiedade. Veja como incorporá-la na sua rotina.",
+      "data": "20/01/2026 - 08:30",
+      "autor": "Dra. Letícia Drummond, Psicóloga",
+      "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "likes": 98,
+      "visualizacoes": 1400,
+      "categoria": "Mindfulness",
+      "tags": [
+        "mindfulness",
+        "meditação",
+        "atenção plena",
+        "estresse"
+      ],
+      "imagemCapa": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600",
+      "imagemAlt": "Pessoa meditando ao ar livre com olhos fechados",
+      "destaque": true,
+      "publicado": true
+    },
+    {
+      "id": "4",
+      "titulo": "Síndrome de Burnout: quando o trabalho adoece",
+      "resumo": "O esgotamento profissional afeta cada vez mais trabalhadores. Entenda o que é burnout, seus estágios e como se recuperar.",
+      "data": "25/01/2026 - 11:00",
+      "autor": "Dra. Camila Fonseca, Psicóloga Clínica",
+      "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "likes": 189,
+      "visualizacoes": 2650,
+      "categoria": "Estresse",
+      "tags": [
+        "burnout",
+        "esgotamento",
+        "trabalho",
+        "estresse ocupacional"
+      ],
+      "imagemCapa": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600",
+      "imagemAlt": "Pessoa com a cabeça apoiada sobre a mesa de trabalho, exausta",
+      "destaque": false,
+      "publicado": true
+    },
+    {
+      "id": "5",
+      "titulo": "Como a terapia online pode te ajudar",
+      "resumo": "A psicoterapia online cresceu muito nos últimos anos. Descubra como ela funciona, suas vantagens e se é indicada para você.",
+      "data": "01/02/2026 - 10:00",
+      "autor": "Dr. Marcos Vinicius Almeida, Psiquiatra",
+      "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "likes": 77,
+      "visualizacoes": 980,
+      "categoria": "Terapia",
+      "tags": [
+        "terapia online",
+        "psicologia",
+        "videochamada",
+        "acesso à saúde"
+      ],
+      "imagemCapa": "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=600",
+      "imagemAlt": "Pessoa em videochamada com psicólogo no notebook",
+      "destaque": false,
+      "publicado": true
+    },
+    {
+      "id": "6",
+      "titulo": "Autocuidado em saúde mental: pequenos hábitos, grandes resultados",
+      "resumo": "Cuidar da saúde mental não exige grandes mudanças. Hábitos simples no dia a dia fazem enorme diferença no bem-estar emocional.",
+      "data": "05/02/2026 - 07:00",
+      "autor": "Dra. Letícia Drummond, Psicóloga",
+      "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "likes": 139,
+      "visualizacoes": 1720,
+      "categoria": "Autocuidado",
+      "tags": [
+        "autocuidado",
+        "bem-estar",
+        "hábitos saudáveis",
+        "sono"
+      ],
+      "imagemCapa": "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600",
+      "imagemAlt": "Pessoa escrevendo em um diário em ambiente aconchegante",
+      "destaque": true,
+      "publicado": true
+    },
+    {
+      "id": "7",
+      "titulo": "TDAH em adultos: o que você precisa saber",
+      "resumo": "O Transtorno de Déficit de Atenção e Hiperatividade não desaparece na infância. Veja como ele se manifesta na vida adulta.",
+      "data": "10/02/2026 - 13:00",
+      "autor": "Dr. Marcos Vinicius Almeida, Psiquiatra",
+      "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "likes": 203,
+      "visualizacoes": 3055,
+      "categoria": "TDAH",
+      "tags": [
+        "TDAH",
+        "déficit de atenção",
+        "hiperatividade",
+        "diagnóstico"
+      ],
+      "imagemCapa": "https://images.unsplash.com/photo-1453733190371-0a9bedd82893?w=600",
+      "imagemAlt": "Pessoa distraída olhando pela janela com caderno aberto",
+      "destaque": false,
+      "publicado": true
+    },
+    {
+      "id": "8",
+      "titulo": "Como ajudar alguém em crise emocional",
+      "resumo": "Saber como agir diante de uma crise emocional pode fazer toda a diferença. Veja orientações práticas para apoiar quem você ama.",
+      "data": "14/02/2026 - 09:30",
+      "autor": "Dra. Camila Fonseca, Psicóloga Clínica",
+      "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "likes": 170,
+      "visualizacoes": 2100,
+      "categoria": "Crise Emocional",
+      "tags": [
+        "crise emocional",
+        "como ajudar",
+        "suporte emocional",
+        "CVV"
+      ],
+      "imagemCapa": "https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?w=600",
+      "imagemAlt": "Duas pessoas se abraçando em momento de conforto emocional",
+      "destaque": true,
+      "publicado": true
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
