@@ -1,0 +1,40 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Paulo Júlio Gonçalves Santos",
+      "email": "paulojgs10@gmail.com",
+      "telefone": "(31) 99502-2492",
+      "cidade": "Belo Horizonte",
+      "favoritos": [1, 2]
+    }
+  ],
+  "artigos": [
+    {
+      "id": 1,
+      "titulo": "Primeiro Artigo",
+      "autor": "Autor A",
+      "data": "2026-06-01"
+    },
+    {
+      "id": 2,
+      "titulo": "Segundo Artigo",
+      "autor": "Autor B",
+      "data": "2026-06-02"
+    }
+  ],
+  "favoritos": [
+    {
+      "id": 1,
+      "usuarioId": 1,
+      "artigoId": 1,
+      "dataFavoritado": "2026-06-05"
+    },
+    {
+      "id": 2,
+      "usuarioId": 1,
+      "artigoId": 2,
+      "dataFavoritado": "2026-06-05"
+    }
+  ]
+}
