@@ -1,0 +1,192 @@
+{
+  "entradas": [
+    {
+      "id": "1",
+      "data": "2026-04-22",
+      "titulo": "Um dia tranquilo",
+      "conteudo": "Hoje acordei com uma sensação de paz...",
+      "humor": "😊",
+      "clima": "☀️",
+      "tags": [
+        "reflexão"
+      ],
+      "palavras": 8
+    },
+    {
+      "id": "2",
+      "data": "2026-04-21",
+      "titulo": "Reflexões noturnas",
+      "conteudo": "A noite traz pensamentos profundos...",
+      "humor": "🙁",
+      "clima": "☁️",
+      "tags": [
+        "reflexão"
+      ],
+      "palavras": 6
+    },
+    {
+      "id": "3",
+      "data": "2026-04-20",
+      "titulo": "Gratidão",
+      "conteudo": "Agradeço por mais um dia de vida...",
+      "humor": "🙏",
+      "clima": "☀️",
+      "tags": [
+        "gratidão"
+      ],
+      "palavras": 7
+    },
+    {
+      "id": "4",
+      "data": "2026-04-19",
+      "titulo": "Desafios no trabalho",
+      "conteudo": "Hoje foi um dia difícil no escritório...",
+      "humor": "😤",
+      "clima": "🌧️",
+      "tags": [
+        "ansiedade"
+      ],
+      "palavras": 8
+    },
+    {
+      "id": "5",
+      "data": "2026-04-18",
+      "titulo": "Encontro com amigos",
+      "conteudo": "Rimos muito hoje, foi revigorante...",
+      "humor": "😄",
+      "clima": "☀️",
+      "tags": [
+        "reflexão",
+        "gratidão"
+      ],
+      "palavras": 6
+    },
+    {
+      "data": "2026-05-19",
+      "titulo": "aadadad",
+      "conteudo": "dadadadadadadd",
+      "humor": "🥺",
+      "clima": "🌧️",
+      "tags": [
+        "reflexão",
+        "gratidão",
+        "ansiedade"
+      ],
+      "palavras": 1,
+      "id": "VfnThMcRGRE"
+    },
+    {
+      "data": "2026-05-19",
+      "titulo": "saaadsasasddasdasadsadsasda",
+      "conteudo": "",
+      "humor": "",
+      "clima": "",
+      "tags": [
+        "reflexão",
+        "gratidão",
+        "ansiedade"
+      ],
+      "palavras": 0,
+      "id": "77deLTnfXdI"
+    },
+    {
+      "data": "2026-05-19",
+      "titulo": "saasasdsd",
+      "conteudo": "adsasasasdasd",
+      "humor": "🙏",
+      "clima": "🌧️",
+      "tags": [
+        "reflexão",
+        "gratidão",
+        "ansiedade"
+      ],
+      "palavras": 1,
+      "id": "X1PSpDicugM"
+    },
+    {
+      "data": "2026-05-19",
+      "titulo": "aaaa",
+      "conteudo": "aaaaa",
+      "humor": "🥺",
+      "clima": "🌧️",
+      "tags": [
+        "reflexão",
+        "gratidão",
+        "ansiedade"
+      ],
+      "palavras": 1,
+      "id": "GirTbQHsk3c"
+    },
+    {
+      "data": "2026-05-19",
+      "titulo": "aaaaa",
+      "conteudo": "aaaaaa",
+      "humor": "🥺",
+      "clima": "☀️",
+      "tags": [
+        "reflexão",
+        "gratidão",
+        "ansiedade"
+      ],
+      "palavras": 1,
+      "id": "JX6OG_aykRA"
+    },
+    {
+      "data": "2026-05-19",
+      "titulo": "aaaaa",
+      "conteudo": "aaaaaaa",
+      "humor": "😤",
+      "clima": "⛈️",
+      "tags": [
+        "reflexão",
+        "gratidão",
+        "ansiedade"
+      ],
+      "palavras": 1,
+      "id": "P3Cctlz7tRw"
+    },
+    {
+      "data": "2026-05-19",
+      "titulo": "aaaaa",
+      "conteudo": "aaaaaa",
+      "humor": "😤",
+      "clima": "⛈️",
+      "tags": [
+        "reflexão",
+        "gratidão",
+        "ansiedade"
+      ],
+      "palavras": 1,
+      "id": "okp7B4c8Z_Y"
+    },
+    {
+      "titulo": "aaaaa",
+      "conteudo": "aaaaaa",
+      "humor": "🙏",
+      "clima": "🌧️",
+      "tags": [
+        "reflexão",
+        "gratidão",
+        "ansiedade"
+      ],
+      "palavras": 1,
+      "data": "2026-05-19",
+      "id": "LtKAXDxkJYs"
+    },
+    {
+      "titulo": "aaaaa",
+      "conteudo": "aaaaaa",
+      "humor": "🙏",
+      "clima": "🌧️",
+      "tags": [
+        "reflexão",
+        "gratidão",
+        "ansiedade"
+      ],
+      "palavras": 1,
+      "data": "2026-05-19",
+      "id": "__7L-YOsg1w"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

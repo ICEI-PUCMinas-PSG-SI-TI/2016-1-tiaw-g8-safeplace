@@ -1,0 +1,49 @@
+{
+  "compromissos": [
+    {
+      "id": 1,
+      "titulo": "Reunião de Alinhamento",
+      "data": "2026-06-07",
+      "horaInicio": "09:00",
+      "horaFim": "10:00",
+      "tipo": "video",
+      "participante": "Ana Silva"
+    },
+    {
+      "id": 2,
+      "titulo": "Consulta Clínica",
+      "data": "2026-06-07",
+      "horaInicio": "10:30",
+      "horaFim": "11:30",
+      "tipo": "presencial",
+      "participante": "Carlos Eduardo"
+    },
+    {
+      "id": 3,
+      "titulo": "Apresentação de Projeto",
+      "data": "2026-06-07",
+      "horaInicio": "14:00",
+      "horaFim": "15:00",
+      "tipo": "video",
+      "participante": "Equipe"
+    },
+    {
+      "id": 4,
+      "titulo": "Revisão de Contrato",
+      "data": "2026-06-10",
+      "horaInicio": "11:00",
+      "horaFim": "12:00",
+      "tipo": "presencial",
+      "participante": "João Mendes"
+    },
+    {
+      "id": 5,
+      "titulo": "Call com Cliente",
+      "data": "2026-06-15",
+      "horaInicio": "15:00",
+      "horaFim": "16:00",
+      "tipo": "video",
+      "participante": "Maria Fernanda"
+    }
+  ]
+}
