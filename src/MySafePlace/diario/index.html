@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mySafePlace – Diário</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Georgia, serif;
+      background: #f5f5f0;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* SIDEBAR */
+    #sidebar {
+      width: 200px;
+      background: #1e2130;
+      color: #ccc;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+
+    #voltar-site {
+      display: block;
+      padding: 12px 14px 0;
+      color: #a8e6c1;
+      text-decoration: none;
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+    }
+    #voltar-site:hover { color: #fff; }
+
+    #sidebar h1 { font-size: 17px; color: #fff; padding: 10px 14px 4px; }
+    #sidebar p  { font-size: 11px; color: #666; padding: 0 14px 14px; border-bottom: 1px solid #2e3244; }
+
+    #lista { flex: 1; overflow-y: auto; }
+
+    .item {
+      padding: 10px 14px;
+      cursor: pointer;
+      border-bottom: 1px solid #252837;
+    }
+    .item:hover { background: #252837; }
+    .item.ativo { background: #2a2f44; }
+    .item-data  { font-size: 10px; color: #555; margin-bottom: 2px; }
+    .item-titulo { font-size: 13px; color: #ddd; font-weight: bold; }
+    .item-prev  { font-size: 11px; color: #555; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    #btn-novo {
+      margin: 10px;
+      padding: 9px;
+      background: #2e3244;
+      color: #ccc;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      font-family: inherit;
+    }
+    #btn-novo:hover { background: #3a4060; }
+
+    /* ÁREA PRINCIPAL */
+    #main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 28px 36px;
+      background: #fafaf8;
+      overflow-y: auto;
+    }
+
+    #data-hoje { font-size: 13px; color: #999; font-style: italic; margin-bottom: 14px; }
+
+    #titulo {
+      font-size: 26px;
+      color: #444;
+      border: none;
+      background: transparent;
+      font-family: Georgia, serif;
+      outline: none;
+      width: 100%;
+      margin-bottom: 18px;
+    }
+    #titulo::placeholder { color: #ccc; }
+
+    #conteudo {
+      flex: 1;
+      border: none;
+      background: transparent;
+      font-family: Georgia, serif;
+      font-size: 14px;
+      color: #333;
+      outline: none;
+      resize: none;
+      line-height: 2;
+      background-image: repeating-linear-gradient(transparent, transparent 27px, #e8e8e2 28px);
+      min-height: 400px;
+      width: 100%;
+    }
+    #conteudo::placeholder { color: #bbb; }
+
+    /* PAINEL DIREITO */
+    #painel {
+      width: 155px;
+      padding: 14px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+
+    .secao {
+      background: #fff;
+      border: 1px solid #e5e5e0;
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .secao h3 {
+      font-size: 10px;
+      letter-spacing: .08em;
+      color: #999;
+      font-family: Arial, sans-serif;
+      margin-bottom: 8px;
+    }
+
+    .emojis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+    .clima  { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; }
+
+    .ebtn {
+      font-size: 20px;
+      background: #f5f5f0;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      padding: 3px;
+      text-align: center;
+    }
+    .ebtn:hover { border-color: #aaa; }
+    .ebtn.sel   { border-color: #555; background: #ececec; }
+
+    #palavras { font-size: 26px; color: #222; }
+
+    #btn-salvar {
+      background: #1e2130;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 11px;
+      width: 100%;
+      font-size: 14px;
+      font-family: Georgia, serif;
+      cursor: pointer;
+    }
+    #btn-salvar:hover { background: #2e3550; }
+  </style>
+</head>
+<body>
+
+  <aside id="sidebar">
+    <a href="../index.html" id="voltar-site">← mySafePlace</a>
+    <h1>Meu Diário</h1>
+    <p>Entradas pessoais</p>
+    <div id="lista"></div>
+    <button id="btn-novo">+ Nova Entrada</button>
+  </aside>
+
+  <main id="main">
+    <p id="data-hoje"></p>
+    <input type="text" id="titulo" placeholder="Título da entrada..." />
+    <textarea id="conteudo" placeholder="Escreva seus pensamentos..."></textarea>
+  </main>
+
+  <aside id="painel">
+    <div class="secao">
+      <h3>COMO VOCÊ ESTÁ?</h3>
+      <div class="emojis">
+        <button class="ebtn" data-humor="😊">😊</button>
+        <button class="ebtn" data-humor="😔">😔</button>
+        <button class="ebtn" data-humor="🤩">🤩</button>
+        <button class="ebtn" data-humor="🥺">🥺</button>
+        <button class="ebtn" data-humor="😤">😤</button>
+        <button class="ebtn" data-humor="🙏">🙏</button>
+      </div>
+    </div>
+
+    <div class="secao">
+      <h3>CLIMA</h3>
+      <div class="clima">
+        <button class="ebtn" data-clima="☀️">☀️</button>
+        <button class="ebtn" data-clima="☁️">☁️</button>
+        <button class="ebtn" data-clima="🌧️">🌧️</button>
+        <button class="ebtn" data-clima="⛈️">⛈️</button>
+      </div>
+    </div>
+
+    <div class="secao">
+      <h3>PALAVRAS</h3>
+      <div id="palavras">0</div>
+    </div>
+
+    <button id="btn-salvar">Salvar Entrada</button>
+  </aside>
+
+  <script>
+    // --- estado ---
+    let idAtual = null;
+    let humor = '';
+    let clima = '';
+
+    // --- data ---
+    const dias  = ['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
+    const meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+    const hoje  = new Date();
+    document.getElementById('data-hoje').textContent =
+      dias[hoje.getDay()] + ', ' + hoje.getDate() + ' de ' + meses[hoje.getMonth()] + ' de ' + hoje.getFullYear();
+
+    // --- localStorage helpers ---
+    function getEntradas() {
+      return JSON.parse(localStorage.getItem('diario') || '[]');
+    }
+    function salvarStorage(entradas) {
+      localStorage.setItem('diario', JSON.stringify(entradas));
+    }
+
+    // --- dados de exemplo (apenas na primeira visita) ---
+    function seedDiario() {
+      if (localStorage.getItem('diario')) return;
+      const exemplos = [
+        { id: 1, data: '18/04/2026', titulo: 'Encontro com amigos',  conteudo: 'Rimos muito hoje, foi revigorante reencontrar quem amo.', humor: '🤩', clima: '☀️' },
+        { id: 2, data: '19/04/2026', titulo: 'Desafios no trabalho', conteudo: 'Hoje foi um dia difícil, mas aprendi a respirar antes de reagir.', humor: '😤', clima: '🌧️' },
+        { id: 3, data: '20/04/2026', titulo: 'Gratidão',             conteudo: 'Agradeço por mais um dia de vida e pelas pessoas ao meu redor.', humor: '🙏', clima: '☀️' },
+        { id: 4, data: '21/04/2026', titulo: 'Reflexões noturnas',   conteudo: 'A noite traz pensamentos profundos sobre o que realmente importa.', humor: '😔', clima: '☁️' },
+        { id: 5, data: '22/04/2026', titulo: 'Um dia tranquilo',     conteudo: 'Hoje acordei com uma sensação de paz e gratidão pela manhã.', humor: '😊', clima: '☀️' }
+      ];
+      salvarStorage(exemplos);
+    }
+    seedDiario();
+
+    // --- renderizar sidebar ---
+    function renderLista() {
+      const lista = document.getElementById('lista');
+      const entradas = getEntradas().slice().reverse();
+      lista.innerHTML = '';
+      entradas.forEach(function(e) {
+        const div = document.createElement('div');
+        div.className = 'item' + (e.id === idAtual ? ' ativo' : '');
+        div.innerHTML =
+          '<div class="item-data">' + e.data + ' ' + (e.humor || '') + '</div>' +
+          '<div class="item-titulo">' + e.titulo + '</div>' +
+          '<div class="item-prev">' + (e.conteudo || '') + '</div>';
+        div.onclick = function() { abrirEntrada(e); };
+        lista.appendChild(div);
+      });
+    }
+
+    // --- abrir entrada ---
+    function abrirEntrada(e) {
+      idAtual = e.id;
+      document.getElementById('titulo').value   = e.titulo;
+      document.getElementById('conteudo').value = e.conteudo;
+      humor = e.humor || '';
+      clima = e.clima || '';
+      contarPalavras();
+
+      document.querySelectorAll('.ebtn[data-humor]').forEach(function(b) {
+        b.classList.toggle('sel', b.dataset.humor === humor);
+      });
+      document.querySelectorAll('.ebtn[data-clima]').forEach(function(b) {
+        b.classList.toggle('sel', b.dataset.clima === clima);
+      });
+
+      renderLista();
+    }
+
+    // --- nova entrada ---
+    document.getElementById('btn-novo').onclick = function() {
+      idAtual = null;
+      humor = '';
+      clima = '';
+      document.getElementById('titulo').value   = '';
+      document.getElementById('conteudo').value = '';
+      document.querySelectorAll('.ebtn').forEach(function(b) { b.classList.remove('sel'); });
+      contarPalavras();
+      renderLista();
+    };
+
+    // --- salvar ---
+    document.getElementById('btn-salvar').onclick = function() {
+      const titulo   = document.getElementById('titulo').value.trim();
+      const conteudo = document.getElementById('conteudo').value.trim();
+
+      if (!titulo) { alert('Coloque um título!'); return; }
+
+      const entradas = getEntradas();
+      const dataHoje = hoje.getDate() + '/' + (hoje.getMonth()+1) + '/' + hoje.getFullYear();
+
+      if (idAtual) {
+        // editar existente
+        const idx = entradas.findIndex(function(e) { return e.id === idAtual; });
+        if (idx !== -1) {
+          entradas[idx].titulo   = titulo;
+          entradas[idx].conteudo = conteudo;
+          entradas[idx].humor    = humor;
+          entradas[idx].clima    = clima;
+        }
+      } else {
+        // nova
+        const nova = {
+          id:       Date.now(),
+          data:     dataHoje,
+          titulo:   titulo,
+          conteudo: conteudo,
+          humor:    humor,
+          clima:    clima
+        };
+        entradas.push(nova);
+        idAtual = nova.id;
+      }
+
+      salvarStorage(entradas);
+      renderLista();
+      alert('Entrada salva!');
+    };
+
+    // --- contar palavras ---
+    function contarPalavras() {
+      const texto = document.getElementById('conteudo').value.trim();
+      const qtd   = texto ? texto.split(/\s+/).length : 0;
+      document.getElementById('palavras').textContent = qtd;
+    }
+    document.getElementById('conteudo').oninput = contarPalavras;
+
+    // --- humor e clima ---
+    document.querySelectorAll('.ebtn[data-humor]').forEach(function(btn) {
+      btn.onclick = function() {
+        document.querySelectorAll('.ebtn[data-humor]').forEach(function(b) { b.classList.remove('sel'); });
+        btn.classList.add('sel');
+        humor = btn.dataset.humor;
+      };
+    });
+
+    document.querySelectorAll('.ebtn[data-clima]').forEach(function(btn) {
+      btn.onclick = function() {
+        document.querySelectorAll('.ebtn[data-clima]').forEach(function(b) { b.classList.remove('sel'); });
+        btn.classList.add('sel');
+        clima = btn.dataset.clima;
+      };
+    });
+
+    // --- carregar ao abrir ---
+    renderLista();
+  </script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+/* ============================================================
+   MySafePlace — global.css
+   Paleta unificada para todos os artefatos do projeto.
+   Como usar: adicione <link rel="stylesheet" href="global.css">
+   ANTES do seu próprio CSS no <head> de cada página.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+/* ── VARIÁVEIS DE COR ──────────────────────────────────────── */
+:root {
+  /* Verdes principais */
+  --msp-verde-escuro:   #1e5c38;
+  --msp-verde-medio:    #2d7a4f;
+  --msp-verde-claro:    #52a875;
+  --msp-verde-hover:    #174d2f;
+  --msp-verde-bg:       #eaf5ee;
+  --msp-verde-suave:    #d4eddf;
+
+  /* Neutros */
+  --msp-branco:         #ffffff;
+  --msp-fundo:          #f4f8f5;
+  --msp-cinza-borda:    #d0e4d8;
+  --msp-cinza-texto:    #5a7a66;
+  --msp-texto:          #1a2e22;
+
+  /* Feedback */
+  --msp-perigo:         #c0392b;
+  --msp-perigo-hover:   #a93226;
+  --msp-aviso:          #e67e22;
+  --msp-sucesso:        #1e5c38;
+
+  /* Tipografia */
+  --msp-fonte:          'Nunito', sans-serif;
+
+  /* Espaçamentos e bordas */
+  --msp-radius:         12px;
+  --msp-radius-sm:      8px;
+  --msp-sombra:         0 2px 12px rgba(0, 0, 0, 0.08);
+  --msp-sombra-hover:   0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ── RESET BASE ────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--msp-fonte);
+  background-color: var(--msp-fundo);
+  color: var(--msp-texto);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ── NAVBAR / HEADER ───────────────────────────────────────── */
+.msp-navbar,
+#navbar-principal,
+nav {
+  background-color: var(--msp-verde-escuro) !important;
+  border-bottom: none !important;
+}
+
+.msp-navbar .navbar-brand,
+#navbar-principal .navbar-brand,
+.logo {
+  font-family: var(--msp-fonte);
+  font-weight: 800;
+  color: #ffffff !important;
+  font-size: 1.3rem;
+}
+
+.msp-navbar .nav-link,
+#navbar-principal .nav-link {
+  color: rgba(255, 255, 255, 0.80) !important;
+  font-weight: 600;
+}
+
+.msp-navbar .nav-link:hover,
+.msp-navbar .nav-link.active,
+#navbar-principal .nav-link:hover,
+#navbar-principal .nav-link.active {
+  color: #ffffff !important;
+}
+
+/* ── HERO / CABEÇALHO DE SEÇÃO ─────────────────────────────── */
+.msp-hero,
+#secao-header,
+.hero {
+  background: linear-gradient(135deg, var(--msp-verde-escuro) 0%, var(--msp-verde-medio) 100%) !important;
+  color: #ffffff !important;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.msp-hero h1,
+.msp-hero h2,
+.msp-hero p,
+#secao-header h2,
+#secao-header p,
+.hero h1,
+.hero p {
+  color: #ffffff !important;
+}
+
+/* ── CARDS ─────────────────────────────────────────────────── */
+.msp-card,
+.card {
+  background-color: var(--msp-branco) !important;
+  border: 1px solid var(--msp-cinza-borda) !important;
+  border-radius: var(--msp-radius) !important;
+  box-shadow: var(--msp-sombra) !important;
+}
+
+.msp-card:hover,
+.card:hover {
+  box-shadow: var(--msp-sombra-hover) !important;
+}
+
+/* ── BOTÕES ─────────────────────────────────────────────────── */
+.msp-btn,
+.btn-primary {
+  background-color: var(--msp-verde-medio) !important;
+  border-color: var(--msp-verde-medio) !important;
+  color: #ffffff !important;
+  font-family: var(--msp-fonte);
+  font-weight: 700;
+  border-radius: var(--msp-radius-sm) !important;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.msp-btn:hover,
+.btn-primary:hover {
+  background-color: var(--msp-verde-hover) !important;
+  border-color: var(--msp-verde-hover) !important;
+  transform: translateY(-1px);
+}
+
+.msp-btn-outline,
+.btn-outline-primary {
+  background-color: transparent !important;
+  border: 2px solid var(--msp-verde-medio) !important;
+  color: var(--msp-verde-medio) !important;
+  font-family: var(--msp-fonte);
+  font-weight: 700;
+  border-radius: var(--msp-radius-sm) !important;
+  transition: all 0.2s;
+}
+
+.msp-btn-outline:hover,
+.btn-outline-primary:hover {
+  background-color: var(--msp-verde-medio) !important;
+  color: #ffffff !important;
+}
+
+.msp-btn-perigo,
+.btn-danger {
+  background-color: var(--msp-perigo) !important;
+  border-color: var(--msp-perigo) !important;
+  color: #ffffff !important;
+  font-family: var(--msp-fonte);
+  font-weight: 700;
+  border-radius: var(--msp-radius-sm) !important;
+}
+
+.msp-btn-perigo:hover,
+.btn-danger:hover {
+  background-color: var(--msp-perigo-hover) !important;
+  border-color: var(--msp-perigo-hover) !important;
+}
+
+.btn-success {
+  background-color: var(--msp-verde-escuro) !important;
+  border-color: var(--msp-verde-escuro) !important;
+  color: #ffffff !important;
+  font-family: var(--msp-fonte);
+  font-weight: 700;
+  border-radius: var(--msp-radius-sm) !important;
+}
+
+.btn-success:hover {
+  background-color: var(--msp-verde-hover) !important;
+  border-color: var(--msp-verde-hover) !important;
+}
+
+.btn-secondary {
+  background-color: #e8f0ea !important;
+  border-color: var(--msp-cinza-borda) !important;
+  color: var(--msp-texto) !important;
+  font-family: var(--msp-fonte);
+  font-weight: 600;
+  border-radius: var(--msp-radius-sm) !important;
+}
+
+/* ── INPUTS / FORMULÁRIOS ──────────────────────────────────── */
+input,
+textarea,
+select,
+.form-control {
+  font-family: var(--msp-fonte) !important;
+  border: 1.5px solid var(--msp-cinza-borda) !important;
+  border-radius: var(--msp-radius-sm) !important;
+  color: var(--msp-texto) !important;
+  background-color: var(--msp-branco) !important;
+  transition: border-color 0.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.form-control:focus {
+  outline: none !important;
+  border-color: var(--msp-verde-claro) !important;
+  box-shadow: 0 0 0 3px rgba(45, 122, 79, 0.15) !important;
+}
+
+/* ── BADGES / TAGS ─────────────────────────────────────────── */
+.msp-badge {
+  display: inline-block;
+  background-color: var(--msp-verde-suave);
+  color: var(--msp-verde-escuro);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+/* ── TÍTULOS DE SEÇÃO ──────────────────────────────────────── */
+.msp-section-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--msp-verde-escuro);
+  margin-bottom: 1rem;
+}
+
+/* ── TOAST / FEEDBACK ──────────────────────────────────────── */
+.msp-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: var(--msp-verde-escuro);
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: var(--msp-radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  animation: msp-slideUp 0.3s ease;
+}
+
+@keyframes msp-slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── LINK GERAL ────────────────────────────────────────────── */
+a {
+  color: var(--msp-verde-medio);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--msp-verde-escuro);
+  text-decoration: underline;
+}
+
+/* ── SCROLLBAR (Chrome/Edge) ───────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--msp-fundo); }
+::-webkit-scrollbar-thumb { background: var(--msp-cinza-borda); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--msp-verde-claro); }
+
+/* ── RESPONSIVO ────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  body { font-size: 0.95rem; }
+  .msp-hero, #secao-header, .hero { padding: 1.5rem 1rem; }
+}
