@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MySafePlace – Diário da Agenda</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <a href="../index.html" style="text-decoration:none;"><div class="sidebar-brand">🧠 MySafePlace</div></a>
+    <nav class="sidebar-nav">
+      <a href="../index.html" class="nav-item" id="nav-inicio">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Início
+      </a>
+      <a href="../agenda/index.html" class="nav-item active">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Agenda
+      </a>
+      <a href="../index.html" class="nav-item" id="nav-inicio">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        Clientes
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../index.html" class="nav-item" id="nav-inicio">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        Configurações
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main-wrap">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="search-wrap">
+        <svg class="icon-search" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="search-input" placeholder="Buscar..." autocomplete="off"/>
+        <div id="search-dropdown" class="search-dropdown"></div>
+      </div>
+      <div class="topbar-actions">
+        <button class="topbar-icon-btn" title="Notificações">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+        </button>
+        <div class="avatar">US</div>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="content">
+
+      <!-- CALENDÁRIO -->
+      <div>
+        <div class="section-title">Minha Agenda</div>
+        <div class="calendar-card">
+          <div class="cal-header">
+            <button class="cal-nav" onclick="prevMonth()">&#8249;</button>
+            <span class="cal-month" id="cal-month"></span>
+            <button class="cal-nav" onclick="nextMonth()">&#8250;</button>
+          </div>
+          <div class="cal-grid" id="cal-grid"></div>
+        </div>
+      </div>
+
+      <!-- COMPROMISSOS DO DIA -->
+      <div class="day-panel">
+        <div class="day-header">
+          <div class="day-title" id="day-title">Carregando...</div>
+          <button class="btn-add" id="btn-novo">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+            Novo
+          </button>
+        </div>
+        <div class="events-list" id="events-list">
+          <div class="empty-day">Carregando...</div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- MODAL: CRIAR / EDITAR -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <div class="modal-title" id="modal-title">Novo Compromisso</div>
+    <form id="compromisso-form" novalidate>
+      <div class="form-group">
+        <label>Título</label>
+        <input id="form-titulo" type="text" placeholder="Ex: Reunião de alinhamento" />
+      </div>
+      <div class="form-group">
+        <label>Data</label>
+        <input id="form-data" type="date" />
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Início</label>
+          <input id="form-hora-inicio" type="time" />
+        </div>
+        <div class="form-group">
+          <label>Fim</label>
+          <input id="form-hora-fim" type="time" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Tipo</label>
+        <select id="form-tipo">
+          <option value="video">Chamada de Vídeo</option>
+          <option value="presencial">Presencial</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Participante(s)</label>
+        <input id="form-participante" type="text" placeholder="Ex: Ana Silva" />
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" id="btn-cancelar-modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL: CONFIRMAR EXCLUSÃO -->
+<div class="modal-overlay" id="delete-overlay">
+  <div class="modal" style="max-width:360px">
+    <div class="modal-title">Excluir compromisso?</div>
+    <p style="font-size:14px;color:var(--text-secondary);margin-bottom:4px">
+      Tem certeza que deseja excluir <strong id="delete-name"></strong>?<br>
+      Esta ação não pode ser desfeita.
+    </p>
+    <div class="modal-actions">
+      <button class="btn btn-secondary" id="btn-cancelar-delete">Cancelar</button>
+      <button class="btn btn-primary" style="background:var(--danger)" id="btn-confirmar-delete">Excluir</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast-wrap" id="toast-wrap"></div>
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.getElementById('sidebar-overlay').classList.toggle('active');
+  });
+  document.getElementById('sidebar-overlay').addEventListener('click', function() {
+    document.querySelector('.sidebar').classList.remove('open');
+    this.classList.remove('active');
+  });
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>

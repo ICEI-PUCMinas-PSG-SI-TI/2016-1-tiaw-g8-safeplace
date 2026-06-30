@@ -1,0 +1,220 @@
+{
+  "profissionais": [
+    {
+      "id": "1",
+      "nome": "Ana Souza",
+      "crp": "04/12345",
+      "sexo": "F",
+      "latitude": -19.9167,
+      "longitude": -43.9345,
+      "atendimento": ["presencial", "online"],
+      "disponibilidade": ["09:00", "10:00", "14:00", "16:00"]
+    },
+    {
+      "id": "2",
+      "nome": "Carlos Lima",
+      "crp": "04/67890",
+      "sexo": "M",
+      "latitude": -19.93,
+      "longitude": -43.95,
+      "atendimento": ["presencial", "online"],
+      "disponibilidade": ["08:00", "11:00", "15:00"]
+    },
+    {
+      "id": "3",
+      "nome": "Fernanda Reis",
+      "crp": "04/11223",
+      "sexo": "F",
+      "latitude": -19.89,
+      "longitude": -43.91,
+      "atendimento": ["online"],
+      "disponibilidade": ["09:00", "13:00", "17:00"]
+    },
+    {
+      "id": "4",
+      "nome": "Marcos Alves",
+      "crp": "04/33445",
+      "sexo": "M",
+      "latitude": -19.95,
+      "longitude": -44,
+      "atendimento": ["presencial"],
+      "disponibilidade": ["10:00", "14:00", "16:00"]
+    }
+  ],
+  "agendamentos": [],
+  "mensagens": [
+    {
+      "id": 1,
+      "usuario": "Paciente",
+      "mensagem": "Boa noite, estou me sentindo muito cansado emocionalmente.",
+      "horario": "20/05/2026 19:20",
+      "tipo": "paciente",
+      "status": "enviada"
+    },
+    {
+      "id": 2,
+      "usuario": "Psicólogo",
+      "mensagem": "Boa noite. Pode me contar um pouco sobre o que está acontecendo?",
+      "horario": "20/05/2026 19:22",
+      "tipo": "psicologo",
+      "status": "respondida"
+    },
+    {
+      "id": 3,
+      "usuario": "Paciente",
+      "mensagem": "Tenho sentido muita pressão na escola e dificuldade para dormir.",
+      "horario": "20/05/2026 19:24",
+      "tipo": "paciente",
+      "status": "enviada"
+    }
+  ],
+  "avaliacoes": [
+    {
+      "id": "1",
+      "paciente": "Maria Silva",
+      "psicologo": "Dr. João Pereira",
+      "nota": 5,
+      "comentario": "Muito atencioso e demonstrou empatia durante toda a conversa.",
+      "data": "01/06/2026"
+    },
+    {
+      "id": "2",
+      "paciente": "Lucas Santos",
+      "psicologo": "Dra. Ana Costa",
+      "nota": 4,
+      "comentario": "Atendimento muito bom, mas o tempo de resposta poderia ser menor.",
+      "data": "02/06/2026"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Paulo Júlio Gonçalves Santos",
+      "email": "paulojgs10@gmail.com",
+      "telefone": "(31) 99502-2492",
+      "cidade": "Belo Horizonte",
+      "favoritos": [1, 2]
+    }
+  ],
+  "artigos": [
+    {
+      "id": 1,
+      "titulo": "Como lidar com a ansiedade no dia a dia",
+      "autor": "Dra. Ana Souza",
+      "data": "2026-06-01"
+    },
+    {
+      "id": 2,
+      "titulo": "A importância do sono para a saúde mental",
+      "autor": "Dr. Carlos Lima",
+      "data": "2026-06-02"
+    },
+    {
+      "id": 3,
+      "titulo": "Técnicas de respiração para momentos de crise",
+      "autor": "Dra. Fernanda Reis",
+      "data": "2026-06-10"
+    }
+  ],
+  "favoritos": [
+    {
+      "id": 1,
+      "usuarioId": 1,
+      "artigoId": 1,
+      "dataFavoritado": "2026-06-05"
+    },
+    {
+      "id": 2,
+      "usuarioId": 1,
+      "artigoId": 2,
+      "dataFavoritado": "2026-06-05"
+    }
+  ],
+  "compromissos": [
+    {
+      "id": 1,
+      "titulo": "Consulta - Ana Souza",
+      "data": "2026-07-07",
+      "horaInicio": "09:00",
+      "horaFim": "10:00",
+      "tipo": "video",
+      "participante": "Dra. Ana Souza"
+    },
+    {
+      "id": 2,
+      "titulo": "Consulta - Carlos Lima",
+      "data": "2026-07-10",
+      "horaInicio": "11:00",
+      "horaFim": "12:00",
+      "tipo": "presencial",
+      "participante": "Dr. Carlos Lima"
+    }
+  ],
+  "popup_emergencial": [
+    {
+      "id": 1,
+      "ativo": true,
+      "titulo": "Ei, como você está se sentindo agora?",
+      "descricao": "Se as coisas parecerem pesadas demais ou se você estiver passando por um momento de crise, lembre-se que não precisa carregar isso sozinho. Nós temos uma rede pronta para te apoiar.",
+      "icone": "bi-exclamation-triangle-fill",
+      "botoes": [
+        {
+          "id_botao": 1,
+          "texto": "Atendimento urgente",
+          "icone": "bi-telephone-fill",
+          "tipo_acao": "abrir_chamada_chat",
+          "classe_css": "btn-urgente"
+        },
+        {
+          "id_botao": 2,
+          "texto": "Continuar navegando",
+          "icone": "",
+          "tipo_acao": "fechar_modal",
+          "classe_css": "btn-continuar"
+        }
+      ]
+    }
+  ],
+  "frases_motivacionais": [
+    { "id": 1, "frase": "Pedir ajuda é um ato de coragem, não de fraqueza." },
+    { "id": 2, "frase": "Você não precisa enfrentar isso sozinho." },
+    { "id": 3, "frase": "Cada dia é uma nova oportunidade de cuidar de você." },
+    { "id": 4, "frase": "Sua saúde mental importa. Estamos aqui por você." },
+    { "id": 5, "frase": "Buscar apoio é o primeiro passo para se sentir melhor." },
+    { "id": 6, "frase": "Você é mais forte do que imagina." },
+    { "id": 7, "frase": "Não existe vergonha em precisar de ajuda." },
+    { "id": 8, "frase": "Cuidar de si mesmo é o maior ato de amor que existe." }
+  ],
+  "opcoes_atendimento": [
+    {
+      "id": 1,
+      "titulo": "Chat",
+      "icone": "bi-chat-dots-fill",
+      "tipo_acao": "chat",
+      "classe_css": "opcao-chat",
+      "descricao": "Converse por texto com um psicólogo agora.",
+      "link": null
+    },
+    {
+      "id": 2,
+      "titulo": "Chamada",
+      "icone": "bi-telephone-fill",
+      "tipo_acao": "chamada",
+      "classe_css": "opcao-chamada",
+      "descricao": "Fale por voz com um profissional de saúde mental.",
+      "link": null
+    },
+    {
+      "id": 3,
+      "titulo": "CVV",
+      "icone": "bi-heart-fill",
+      "tipo_acao": "cvv",
+      "classe_css": "opcao-cvv",
+      "descricao": "Centro de Valorização da Vida — ligue 188 (gratuito).",
+      "link": "https://www.cvv.org.br"
+    }
+  ],
+  "rendas": [],
+  "despesas": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}

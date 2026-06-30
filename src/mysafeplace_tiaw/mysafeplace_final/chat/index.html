@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySafePlace – Chat com Psicólogo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/global.css">
+    <style>
+        body { background: var(--msp-fundo); min-height: 100vh; display: flex; flex-direction: column; }
+        .msp-header { background: var(--msp-verde-escuro); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+        .msp-header .logo { font-family:'Nunito',sans-serif; font-size:1.2rem; font-weight:800; color:white; text-decoration:none; }
+        .msp-header nav a { color:rgba(255,255,255,0.8); text-decoration:none; font-size:0.88rem; font-weight:600; margin-left:16px; }
+        .msp-header nav a:hover, .msp-header nav a.active { color:white; font-weight:700; }
+        .chat-wrapper { max-width:600px; width:100%; margin:32px auto; padding:0 16px 32px; flex:1; display:flex; flex-direction:column; }
+        .chat-titulo { font-size:1.3rem; font-weight:800; color:var(--msp-verde-escuro); margin-bottom:20px; text-align:center; }
+        .chat-form { background:white; border:1px solid var(--msp-cinza-borda); border-radius:var(--msp-radius); padding:20px; margin-bottom:20px; box-shadow:var(--msp-sombra); }
+        .chat-form input { width:100%; padding:10px 14px; margin-bottom:10px; border:1.5px solid var(--msp-cinza-borda); border-radius:8px; font-family:var(--msp-fonte); font-size:0.9rem; background:var(--msp-fundo); }
+        .chat-form input:focus { outline:none; border-color:var(--msp-verde-claro); background:white; }
+        .btn-enviar { width:100%; padding:11px; background:var(--msp-verde-medio); color:white; border:none; border-radius:8px; font-family:var(--msp-fonte); font-size:0.95rem; font-weight:700; cursor:pointer; }
+        .btn-enviar:hover { background:var(--msp-verde-escuro); }
+        #chat { display:flex; flex-direction:column; gap:12px; }
+        .mensagem { background:white; border:1px solid var(--msp-cinza-borda); border-left:4px solid var(--msp-verde-claro); border-radius:var(--msp-radius); padding:14px 16px; box-shadow:var(--msp-sombra); }
+        .mensagem h3 { font-size:0.88rem; font-weight:700; color:var(--msp-verde-escuro); margin-bottom:6px; }
+        .mensagem p { font-size:0.9rem; color:var(--msp-texto); margin-bottom:12px; line-height:1.5; }
+        .mensagem-acoes { display:flex; gap:8px; flex-wrap:wrap; }
+        .btn-editar, .btn-excluir { padding:6px 14px; border-radius:8px; font-family:var(--msp-fonte); font-size:0.82rem; font-weight:600; cursor:pointer; border:none; }
+        .btn-editar { background:var(--msp-verde-bg); color:var(--msp-verde-escuro); }
+        .btn-excluir { background:#fdecea; color:var(--msp-perigo); }
+        .btn-excluir:hover { background:var(--msp-perigo); color:white; }
+        .msp-header nav a { color:rgba(255,255,255,0.8); text-decoration:none; font-size:0.88rem; font-weight:600; margin-left:4px; }
+        .msp-header nav a:hover, .msp-header nav a.active { color:white; font-weight:700; }
+        .msp-header nav { display:flex; gap:4px; align-items:center; }
+        @media (max-width:480px) { .chat-wrapper{margin:16px auto;} .msp-header nav{display:none;} }
+    </style>
+</head>
+<body>
+    <div class="msp-header">
+        <a href="../index.html" class="logo">my<span style="color:#a8e6c1;">SafePlace</span></a>
+        <nav>
+            <a href="../index.html">Início</a>
+            <a href="../agendamento/index.html">Consultas</a>
+            <a href="../chat/index.html" class="active">Chat</a>
+            <a href="../avaliacoes/index.html">Avaliações</a>
+            <a href="../perfil/index.html">Perfil</a>
+            <a href="../agenda/index.html">Agenda</a>
+        </nav>
+    </div>
+    <div class="chat-wrapper">
+        <h1 class="chat-titulo">💬 Conversa com Psicólogo</h1>
+        <div class="chat-form">
+            <input type="text" id="usuario" placeholder="Seu nome">
+            <input type="text" id="mensagem" placeholder="Digite sua mensagem...">
+            <button class="btn-enviar" onclick="enviarMensagem()">Enviar Mensagem</button>
+        </div>
+        <div id="chat"></div>
+    </div>
+    <script src="../shared/supabase.js"></script>
+    <script>
+        async function carregarMensagens() {
+            const dados = await db.get('mensagens');
+            const chat = document.getElementById('chat');
+            chat.innerHTML = '';
+            dados.forEach(msg => {
+                const div = document.createElement('div');
+                div.className = 'mensagem';
+                div.innerHTML = `<h3>${msg.usuario}</h3><p>${msg.mensagem}</p>
+                <div class="mensagem-acoes">
+                    <button class="btn-editar" onclick="editarMensagem(${msg.id})">✏️ Editar</button>
+                    <button class="btn-excluir" onclick="excluirMensagem(${msg.id})">🗑️ Excluir</button>
+                </div>`;
+                chat.appendChild(div);
+            });
+        }
+        async function enviarMensagem() {
+            const usuario = document.getElementById('usuario').value.trim();
+            const mensagem = document.getElementById('mensagem').value.trim();
+            if (!usuario || !mensagem) { alert('Preencha seu nome e a mensagem.'); return; }
+            await db.post('mensagens', { usuario, mensagem, horario: new Date().toLocaleString('pt-BR'), tipo: 'paciente', status: 'enviada' });
+            document.getElementById('usuario').value = '';
+            document.getElementById('mensagem').value = '';
+            carregarMensagens();
+        }
+        async function excluirMensagem(id) {
+            if (!confirm('Deseja excluir esta mensagem?')) return;
+            await db.delete('mensagens', id);
+            carregarMensagens();
+        }
+        async function editarMensagem(id) {
+            const nova = prompt('Digite a nova mensagem:');
+            if (!nova) return;
+            await db.patch('mensagens', id, { mensagem: nova });
+            carregarMensagens();
+        }
+        carregarMensagens();
+    </script>
+</body>
+</html>
