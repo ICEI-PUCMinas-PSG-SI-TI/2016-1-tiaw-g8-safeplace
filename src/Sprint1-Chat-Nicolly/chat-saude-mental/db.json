@@ -1,0 +1,79 @@
+{
+  "mensagens": [
+    {
+      "id": 1,
+      "usuario": "Paciente",
+      "mensagem": "Boa noite, estou me sentindo muito cansado emocionalmente.",
+      "horario": "20/05/2026 19:20",
+      "tipo": "paciente",
+      "status": "enviada"
+    },
+
+    {
+      "id": 2,
+      "usuario": "Psicólogo",
+      "mensagem": "Boa noite. Pode me contar um pouco sobre o que está acontecendo?",
+      "horario": "20/05/2026 19:22",
+      "tipo": "psicologo",
+      "status": "respondida"
+    },
+
+    {
+      "id": 3,
+      "usuario": "Paciente",
+      "mensagem": "Tenho sentido muita pressão na escola e dificuldade para dormir.",
+      "horario": "20/05/2026 19:24",
+      "tipo": "paciente",
+      "status": "enviada"
+    },
+
+    {
+      "id": 4,
+      "usuario": "Psicólogo",
+      "mensagem": "Esses sintomas podem estar relacionados ao estresse emocional. Você consegue descansar durante o dia?",
+      "horario": "20/05/2026 19:26",
+      "tipo": "psicologo",
+      "status": "respondida"
+    },
+
+    {
+      "id": 5,
+      "usuario": "Paciente",
+      "mensagem": "Não muito. Também tenho me sentido desmotivado para várias atividades.",
+      "horario": "20/05/2026 19:28",
+      "tipo": "paciente",
+      "status": "enviada"
+    },
+
+    {
+      "id": 6,
+      "usuario": "Psicólogo",
+      "mensagem": "Entendo. É importante reconhecer esses sentimentos e procurar apoio emocional.",
+      "horario": "20/05/2026 19:30",
+      "tipo": "psicologo",
+      "status": "respondida"
+    }
+  ],
+
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Paciente",
+      "tipo": "paciente",
+      "idade": 17
+    },
+
+    {
+      "id": 2,
+      "nome": "Psicólogo",
+      "tipo": "profissional",
+      "especialidade": "Psicologia Clínica"
+    }
+  ],
+
+  "configuracoes": {
+    "tema": "verde-agua",
+    "tituloSistema": "Conversa com Psicólogo",
+    "versao": "1.0"
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de Psicólogos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Avaliação de Psicólogos</h1>
+
+        <form id="form-avaliacao">
+
+            <input type="text" id="paciente" placeholder="Nome do Paciente" required>
+
+            <input type="text" id="psicologo" placeholder="Nome do Psicólogo" required>
+
+            <select id="nota" required>
+                <option value="">Selecione uma nota</option>
+                <option value="1">⭐ 1</option>
+                <option value="2">⭐⭐ 2</option>
+                <option value="3">⭐⭐⭐ 3</option>
+                <option value="4">⭐⭐⭐⭐ 4</option>
+                <option value="5">⭐⭐⭐⭐⭐ 5</option>
+            </select>
+
+            <textarea id="comentario" placeholder="Escreva sua avaliação..." required></textarea>
+
+            <button type="submit">Enviar Avaliação</button>
+
+        </form>
+
+        <div id="lista-avaliacoes"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

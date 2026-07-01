@@ -1,0 +1,62 @@
+{
+  "avaliacoes": [
+    {
+      "id": "1",
+      "paciente": "Maria Silva",
+      "psicologo": "Dr. João Pereira",
+      "nota": 5,
+      "comentario": "Muito atencioso e demonstrou empatia durante toda a conversa.",
+      "data": "01/06/2026"
+    },
+    {
+      "id": "2",
+      "paciente": "Lucas Santos",
+      "psicologo": "Dra. Ana Costa",
+      "nota": 4,
+      "comentario": "Atendimento muito bom, mas o tempo de resposta poderia ser menor.",
+      "data": "02/06/2026"
+    },
+    {
+      "id": "3",
+      "paciente": "Fernanda Oliveira",
+      "psicologo": "Dr. Carlos Mendes",
+      "nota": 5,
+      "comentario": "Excelente profissional, me ajudou bastante.",
+      "data": "03/06/2026"
+    },
+    {
+      "paciente": "nicollu",
+      "psicologo": "carlos ",
+      "nota": "3",
+      "comentario": "ami=ei ",
+      "data": "07/06/2026",
+      "id": "zX6rECveecU"
+    }
+  ],
+  "psicologos": [
+    {
+      "id": "1",
+      "nome": "Dr. João Pereira",
+      "especialidade": "Psicologia Clínica",
+      "avaliacaoMedia": 5
+    },
+    {
+      "id": "2",
+      "nome": "Dra. Ana Costa",
+      "especialidade": "Saúde Mental",
+      "avaliacaoMedia": 4
+    },
+    {
+      "id": "3",
+      "nome": "Dr. Carlos Mendes",
+      "especialidade": "Terapia Cognitivo-Comportamental",
+      "avaliacaoMedia": 5
+    }
+  ],
+  "configuracoes": {
+    "tema": "verde-agua",
+    "tituloSistema": "Avaliação de Psicólogos",
+    "versao": "1.0"
+  },
+  "$schema": "./node_modules/json-server/schema.json"
+}
